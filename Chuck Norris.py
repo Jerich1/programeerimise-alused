@@ -19,5 +19,9 @@ elif tagasiside == "Hell yeah":
     print("Peabki meeldima! Chuck Norris on JUMAL!!")
 elif tagasiside == "JAH":
     print("Peabki meeldima! Chuck Norris on JUMAL!!")
+elif tagasiside == "ja":
+    print("Peabki meeldima! Chuck Norris on JUMAL!!")
+elif tagasiside == "Ja":
+    print("Peabki meeldima! Chuck Norris on JUMAL!!")
 else:
     print("Sinust, poeg, ei saa asja!")
