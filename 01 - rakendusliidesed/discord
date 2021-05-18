@@ -17,3 +17,17 @@ class MyClient(discord.Client):
     async def on_message(self, message):
         if message.author == self.user:
             return
+
+     
+        print(message.author, message.channel, message.content)
+                            
+        if message.content.lower() == "tere" and message.channel.name == "betoon":
+            print("Sending tere, betoonimees")
+            await message.channel.send("Tere, betoonimees")
+
+        if message.content.lower() == "nali" and message.channel.name == "nalja-kah":          
+            print("sending nali")
+            await message.channel.send(vastus["value"])
+
+client = MyClient()
+client.run("token")
