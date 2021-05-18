@@ -1,0 +1,19 @@
+import discord
+import requests
+
+
+aadress = "https://api.chucknorris.io/jokes/random"
+päring = requests.get(aadress)
+vastus = päring.json()
+
+
+
+
+class MyClient(discord.Client):
+    async def on_ready(self):
+        print("logged on as", self.user)
+        
+        
+    async def on_message(self, message):
+        if message.author == self.user:
+            return
