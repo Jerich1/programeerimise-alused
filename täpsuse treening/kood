@@ -1,1 +1,43 @@
+import pygame
+import random
+import time
 
+
+s=0
+m=0
+
+
+skoor = 0
+LAIUS = 1000
+aeg = pygame.time.Clock()
+aeg_x = 50
+aeg_y = 50
+KÕRGUS = 1000
+kell = pygame.time.Clock()
+ekraan = pygame.display.set_mode((1000, 1000))
+pygame.init()
+täpp = pygame.image.load("täpp.png")
+FONT = pygame.font.SysFont("Comic Sans MS", 24)
+FONT2= pygame.font.SysFont("Comic Sans MS", 50)
+tekst_x = 50
+tekst_y = 50
+
+
+täpp_x = 100
+täpp_y = 100
+pygame.display.flip()
+
+
+start_ticks=pygame.time.get_ticks()
+def juhuslik_punkt():
+    x = random.randint(0, LAIUS - täpp_rect.w)
+    y = random.randint(0, KÕRGUS - täpp_rect.h)
+    return x, y
+mäng_käib = True
+while mäng_käib:
+    dt = kell.tick(60)
+    seconds = (pygame.time.get_ticks()-start_ticks)/1000
+    if seconds > 30:
+        print("Sinu skoor oli: " + str(skoor))
+        break
+        
