@@ -40,4 +40,27 @@ while mäng_käib:
     if seconds > 30:
         print("Sinu skoor oli: " + str(skoor))
         break
-        
+    for sisend in pygame.event.get():
+                if sisend.type == pygame.QUIT:
+                    mäng_käib = False
+                elif sisend.type == pygame.MOUSEBUTTONDOWN:
+                    klõpsu_asukoht = pygame.mouse.get_pos()
+                    if täpp_rect.collidepoint(klõpsu_asukoht):
+                        täpp_x, täpp_y = juhuslik_punkt()
+                        skoor += 1
+
+        ekraan.fill((1, 251, 217))
+        täpp_rect = ekraan.blit(täpp, (täpp_x, täpp_y))
+
+        while aeg == True:
+            lõpp_aeg = aeg - 1
+        tekst = FONT.render("aeg: " + str(seconds), True, (0, 0, 0))
+        ekraan.blit(tekst, (tekst_x, tekst_y))
+        tekst = FONT.render("skoor: " + str(skoor), True, (0, 0, 0))
+        ekraan.blit(tekst, (50, 100))
+
+
+
+
+        pygame.display.flip()
+    pygame.quit()
